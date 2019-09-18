@@ -31,8 +31,9 @@
     <div class="row">
       <div id="mainContent" class="col">
         <div id="patientRecordApp">
-          <form>
+          <form @submit.prevent="handleCreateRecord">
 
+<!--From Bootstrap-->
             <div class="form-group row">
               <label for="inputGUID" class="col-sm-2 col-form-label">GUID</label>
               <div class="col-sm-10">
@@ -43,28 +44,28 @@
             <div class="form-group row">
               <label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputFirstName" placeholder="First">
+                <input type="text" class="form-control" id="inputFirstName" placeholder="First" v-model="formPatient.firstName">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="inputLastName" class="col-sm-2 col-form-label">Last Name</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputLastName" placeholder="Last">
+                <input type="text" class="form-control" id="inputLastName" placeholder="Last" v-model="formPatient.lasttName">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="inputDOB" class="col-sm-2 col-form-label">DOB</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputDOB" placeholder="DOB">
+                <input type="text" class="form-control" id="inputDOB" placeholder="DOB" v-model="formPatient.dob">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="inputSAB" class="col-sm-2 col-form-label">SAB</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputSAB" placeholder="SAB">
+                <input type="text" class="form-control" id="inputSAB" placeholder="SAB" v-model="formPatient.sexAtBirth">
               </div>
             </div>
 
@@ -74,6 +75,8 @@
       </div>
     </div>
   </form>
+
+  <!--From Triage-->
           <table class="table table-sm table-hover">
             <thead>
               <th>First</th>
